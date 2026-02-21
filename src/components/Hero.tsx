@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-navy flex items-center">
+    <section className="relative h-screen w-full overflow-hidden bg-navy flex items-center -mt-[130px]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img

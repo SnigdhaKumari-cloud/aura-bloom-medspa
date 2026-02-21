@@ -31,7 +31,7 @@ export default function RootLayout({
                 className={`${inter.variable} ${cormorantGaramond.variable} antialiased bg-cream text-charcoal font-sans`}
             >
                 <Navbar />
-                <main>{children}</main>
+                <main className="pt-[130px]">{children}</main>
             </body>
         </html>
     );

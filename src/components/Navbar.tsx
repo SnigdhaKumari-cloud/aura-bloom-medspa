@@ -57,7 +57,7 @@ export default function Navbar() {
   // Glasskin-style: teal text on solid bg, white text over hero
   const teal = '#27899D';
   const peachBg = '#F6DFD6';
-  const mintBg = '#E8EDE5';
+  const mintBg = '#E5EDF1';
 
   const isHomePage = pathname === '/';
   // Only transparent on home page before scroll

@@ -59,13 +59,17 @@ export default function Navbar() {
   const peachBg = '#F6DFD6';
   const mintBg = '#E8EDE5';
 
+  const isHomePage = pathname === '/';
+  // Only transparent on home page before scroll
+  const isTransparent = isHomePage && !scrolled;
+
   return (
     <>
-      {/* Announcement Bar — peach bg, teal text, hides on scroll */}
+      {/* Announcement Bar — peach bg, teal text, hides on scroll (only visible on home page) */}
       <div
         className={cn(
           'fixed top-0 left-0 right-0 z-[60] text-center py-2.5 px-4 transition-all duration-500',
-          scrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+          (scrolled || !isHomePage) ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
         )}
         style={{ backgroundColor: peachBg }}
       >
@@ -81,10 +85,10 @@ export default function Navbar() {
       <header
         className={cn(
           'fixed left-0 right-0 z-50 transition-all duration-500',
-          scrolled ? 'top-0' : 'top-[38px]'
+          isTransparent ? 'top-[38px]' : 'top-0'
         )}
         style={{
-          backgroundColor: scrolled ? mintBg : 'transparent',
+          backgroundColor: isTransparent ? 'transparent' : mintBg,
         }}
       >
         {/* Top Tier: Logo (center) + Utility Icons (right) */}
@@ -99,13 +103,13 @@ export default function Navbar() {
           >
             <span
               className="text-4xl font-serif tracking-[0.25em] transition-colors duration-300"
-              style={{ color: scrolled ? teal : 'white' }}
+              style={{ color: isTransparent ? 'white' : teal }}
             >
               AURA
             </span>
             <span
               className="text-[10px] tracking-[0.5em] font-bold mt-0.5 uppercase transition-colors duration-300"
-              style={{ color: scrolled ? teal : 'rgba(255,255,255,0.8)' }}
+              style={{ color: isTransparent ? 'rgba(255,255,255,0.8)' : teal }}
             >
               Bloom Medspa
             </span>
@@ -115,14 +119,14 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-end gap-7">
             <button
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: scrolled ? teal : 'white', letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
             >
               <User size={15} strokeWidth={1.5} />
               Account
             </button>
             <button
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: scrolled ? teal : 'white', letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
             >
               <Search size={15} strokeWidth={1.5} />
               Search
@@ -130,7 +134,7 @@ export default function Navbar() {
             <Link
               href="/cart"
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: scrolled ? teal : 'white', letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
             >
               <ShoppingBag size={15} strokeWidth={1.5} />
               Cart (0)
@@ -139,7 +143,7 @@ export default function Navbar() {
             {/* Mobile Toggle */}
             <button
               className="md:hidden transition-colors"
-              style={{ color: scrolled ? teal : 'white' }}
+              style={{ color: isTransparent ? 'white' : teal }}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -162,7 +166,7 @@ export default function Navbar() {
                         onMouseEnter={() => setServicesOpen(true)}
                         className="text-[13px] uppercase font-medium py-1 relative transition-colors duration-300"
                         style={{
-                          color: scrolled ? teal : 'white',
+                          color: isTransparent ? 'white' : teal,
                           letterSpacing: '2.8px',
                         }}
                       >
@@ -173,7 +177,7 @@ export default function Navbar() {
                             "absolute -bottom-1 left-0 right-0 h-[1.5px] transition-opacity duration-300",
                             active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                           )}
-                          style={{ backgroundColor: scrolled ? teal : 'white' }}
+                          style={{ backgroundColor: isTransparent ? 'white' : teal }}
                         />
                       </button>
 
@@ -213,7 +217,7 @@ export default function Navbar() {
                     href={link.href}
                     className="text-[13px] uppercase font-medium py-1 relative group transition-colors duration-300"
                     style={{
-                      color: scrolled ? teal : 'white',
+                      color: isTransparent ? 'white' : teal,
                       letterSpacing: '2.8px',
                     }}
                   >
@@ -224,7 +228,7 @@ export default function Navbar() {
                         "absolute -bottom-1 left-0 right-0 h-[1.5px] transition-opacity duration-300",
                         active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       )}
-                      style={{ backgroundColor: scrolled ? teal : 'white' }}
+                      style={{ backgroundColor: isTransparent ? 'white' : teal }}
                     />
                   </Link>
                 );

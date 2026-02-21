@@ -19,6 +19,8 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +30,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -39,155 +40,204 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const pathname = usePathname();
-
   const navLinks = [
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '/services', hasDropdown: true },
     { name: 'About', href: '/about' },
     { name: 'Memberships', href: '/memberships' },
     { name: 'Gift Cards', href: '/gift-cards' },
-    { name: 'Testimonials', href: '/testimonials' }
+    { name: 'Testimonials', href: '/testimonials' },
   ];
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
-
-  const renderNavLink = (link: typeof navLinks[0]) => {
-    const active = isActive(link.href);
-
-    if (link.hasDropdown) {
-      return (
-        <div key={link.name} className="relative" ref={dropdownRef}>
-          <button
-            onClick={() => setServicesOpen(!servicesOpen)}
-            className={cn(
-              "text-[14px] uppercase tracking-[0.25em] transition-all duration-300 font-light flex items-center gap-1.5 py-2 px-4 -mx-4 rounded-sm",
-              active
-                ? "bg-navy text-white"
-                : "text-navy hover:bg-navy/5"
-            )}
-          >
-            {link.name}
-            <ChevronDown
-              size={14}
-              strokeWidth={1.5}
-              className={cn(
-                "transition-transform duration-300",
-                servicesOpen ? "rotate-180" : ""
-              )}
-            />
-          </button>
-
-          {/* Dropdown */}
-          <AnimatePresence>
-            {servicesOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -4 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.2, ease: 'easeOut' }}
-                className="absolute top-full left-0 mt-2 bg-white border border-navy/10 rounded-lg shadow-lg min-w-[220px] overflow-hidden z-50"
-              >
-                <div className="py-2">
-                  {serviceSubLinks.map((subLink) => (
-                    <Link
-                      key={subLink.name}
-                      href={subLink.href}
-                      onClick={() => setServicesOpen(false)}
-                      className="block px-6 py-3 text-[13px] tracking-[0.15em] text-navy/80 hover:bg-cream hover:text-navy transition-colors font-light"
-                    >
-                      {subLink.name}
-                    </Link>
-                  ))}
-                  <div className="border-t border-navy/5 mt-1 pt-1">
-                    <Link
-                      href="/services"
-                      onClick={() => setServicesOpen(false)}
-                      className="block px-6 py-3 text-[13px] tracking-[0.15em] text-glass-teal hover:bg-cream transition-colors font-medium"
-                    >
-                      View All Services
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      );
-    }
-
-    return (
-      <Link
-        key={link.name}
-        href={link.href}
-        className={cn(
-          "text-[14px] uppercase tracking-[0.25em] transition-all duration-300 font-light py-2 px-4 -mx-4 rounded-sm",
-          active
-            ? "bg-navy text-white"
-            : "text-navy hover:bg-navy/5"
-        )}
-      >
-        {link.name}
-      </Link>
-    );
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(href + '/');
   };
+
+  // Determine colors based on scroll + page
+  const isTransparent = isHome && !scrolled;
+  const textColor = isTransparent ? 'text-white' : 'text-navy';
+  const hoverTextColor = isTransparent ? 'hover:text-gold' : 'hover:text-glass-teal';
+  const logoColor = isTransparent ? 'text-white' : 'text-gold';
+  const subLogoColor = isTransparent ? 'text-white/80' : 'text-navy/80';
+  const borderColor = isTransparent ? 'border-white/10' : 'border-navy/8';
+  const activeUnderline = isTransparent ? 'bg-gold' : 'bg-navy';
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-glass-teal text-white py-2 px-4 text-center">
-        <p className="text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold">
-          Book Your Transformation Today - Limited Availability
+      {/* Announcement Bar — Glasskin-style peach/nude bar */}
+      <div className="bg-accent text-navy py-2.5 px-4 text-center">
+        <p className="text-[11px] uppercase tracking-[0.35em] font-semibold">
+          Book Your Transformation Today — Limited Availability
         </p>
       </div>
 
-      <nav
+      {/* Main Header — Two-tier Glasskin style */}
+      <header
         className={cn(
-          'sticky top-0 left-0 right-0 z-50 transition-all duration-500 px-6 border-b border-navy/5',
-          scrolled ? 'bg-glass-cream/95 backdrop-blur-md py-3 shadow-sm' : 'bg-glass-cream py-4'
+          'sticky top-0 left-0 right-0 z-50 transition-all duration-500',
+          isTransparent
+            ? 'bg-transparent'
+            : 'bg-cream/95 backdrop-blur-md shadow-sm'
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Top Tier: Logo (center) + Utility Icons (right) */}
+        <div className={cn(
+          'border-b transition-colors duration-500',
+          borderColor
+        )}>
+          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            {/* Left spacer for balance */}
+            <div className="flex-1" />
 
-          {/* Left: Navigation Links (Desktop) */}
-          <div className="hidden md:flex items-center gap-8 flex-1">
-            {navLinks.slice(0, 3).map((link) => renderNavLink(link))}
-          </div>
-
-          {/* Center: Brand Logo */}
-          <div className="flex items-center justify-center flex-1">
+            {/* Center: Brand Logo */}
             <Link
               href="/"
-              className="text-3xl font-serif tracking-[0.2em] text-navy flex flex-col items-center leading-none"
+              className="flex flex-col items-center leading-none group"
             >
-              <span className="text-gold font-light">AURA</span>
-              <span className="text-[11px] tracking-[0.5em] text-navy/80 font-bold mt-1">BLOOM MEDSPA</span>
+              <span className={cn(
+                "text-4xl font-serif tracking-[0.25em] transition-colors duration-300",
+                logoColor
+              )}>
+                AURA
+              </span>
+              <span className={cn(
+                "text-[10px] tracking-[0.6em] font-bold mt-1 uppercase transition-colors duration-300",
+                subLogoColor
+              )}>
+                Bloom Medspa
+              </span>
             </Link>
-          </div>
 
-          {/* Right: Nav Links & Utility Icons (Desktop) */}
-          <div className="hidden md:flex items-center justify-end gap-8 flex-1">
-            {navLinks.slice(3).map((link) => renderNavLink(link))}
-            <div className="flex items-center gap-6 ml-4 pl-6 border-l border-navy/10">
-              <button className="text-navy hover:text-glass-peach transition-colors">
-                <Search size={20} strokeWidth={1.5} />
+            {/* Right: Utility Icons */}
+            <div className="flex-1 flex items-center justify-end gap-6">
+              <button className={cn(
+                "hidden md:flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] font-medium transition-colors duration-300",
+                textColor, hoverTextColor
+              )}>
+                <User size={16} strokeWidth={1.5} />
+                Account
               </button>
-              <button className="text-navy hover:text-glass-peach transition-colors">
-                <User size={20} strokeWidth={1.5} />
+              <button className={cn(
+                "hidden md:flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] font-medium transition-colors duration-300",
+                textColor, hoverTextColor
+              )}>
+                <Search size={16} strokeWidth={1.5} />
+                Search
               </button>
-              <Link href="/cart" className="text-navy hover:text-glass-peach transition-colors flex items-center gap-1">
-                <ShoppingBag size={20} strokeWidth={1.5} />
-                <span className="text-[11px] font-bold tracking-normal">(0)</span>
+              <Link href="/cart" className={cn(
+                "hidden md:flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] font-medium transition-colors duration-300",
+                textColor, hoverTextColor
+              )}>
+                <ShoppingBag size={16} strokeWidth={1.5} />
+                Cart (0)
               </Link>
+
+              {/* Mobile Toggle */}
+              <button
+                className={cn("md:hidden transition-colors", textColor)}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
             </div>
           </div>
+        </div>
 
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden text-navy"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        {/* Bottom Tier: Centered Navigation Links — Desktop only */}
+        <div className="hidden md:block">
+          <div className="max-w-7xl mx-auto px-6">
+            <nav className="flex items-center justify-center gap-8 py-3">
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+
+                if (link.hasDropdown) {
+                  return (
+                    <div key={link.name} className="relative" ref={dropdownRef}>
+                      <button
+                        onClick={() => setServicesOpen(!servicesOpen)}
+                        className={cn(
+                          "text-[12px] uppercase tracking-[0.25em] transition-all duration-300 font-medium flex items-center gap-1 py-1 relative group",
+                          textColor, hoverTextColor
+                        )}
+                      >
+                        {link.name}
+                        <ChevronDown
+                          size={12}
+                          strokeWidth={1.5}
+                          className={cn(
+                            "transition-transform duration-300",
+                            servicesOpen ? "rotate-180" : ""
+                          )}
+                        />
+                        {/* Active underline */}
+                        {active && (
+                          <span className={cn(
+                            "absolute -bottom-1 left-0 right-0 h-[1.5px]",
+                            activeUnderline
+                          )} />
+                        )}
+                      </button>
+
+                      <AnimatePresence>
+                        {servicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -4 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -4 }}
+                            transition={{ duration: 0.2, ease: 'easeOut' }}
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white border border-navy/10 rounded-lg shadow-xl min-w-[220px] overflow-hidden z-50"
+                          >
+                            <div className="py-2">
+                              {serviceSubLinks.map((subLink) => (
+                                <Link
+                                  key={subLink.name}
+                                  href={subLink.href}
+                                  onClick={() => setServicesOpen(false)}
+                                  className="block px-6 py-3 text-[12px] tracking-[0.15em] text-navy/80 hover:bg-cream hover:text-navy transition-colors font-light"
+                                >
+                                  {subLink.name}
+                                </Link>
+                              ))}
+                              <div className="border-t border-navy/5 mt-1 pt-1">
+                                <Link
+                                  href="/services"
+                                  onClick={() => setServicesOpen(false)}
+                                  className="block px-6 py-3 text-[12px] tracking-[0.15em] text-glass-teal hover:bg-cream transition-colors font-medium"
+                                >
+                                  View All Services
+                                </Link>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={cn(
+                      "text-[12px] uppercase tracking-[0.25em] transition-all duration-300 font-medium py-1 relative group",
+                      textColor, hoverTextColor
+                    )}
+                  >
+                    {link.name}
+                    {/* Active underline */}
+                    {active && (
+                      <span className={cn(
+                        "absolute -bottom-1 left-0 right-0 h-[1.5px]",
+                        activeUnderline
+                      )} />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -197,7 +247,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="absolute top-full left-0 right-0 bg-[#fbfcf7] border-t border-navy/5 overflow-hidden md:hidden"
+              className="absolute top-full left-0 right-0 bg-cream border-t border-navy/5 overflow-hidden md:hidden shadow-lg"
             >
               <div className="flex flex-col p-8 gap-1">
                 {navLinks.map((link) => (
@@ -289,7 +339,7 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>
+      </header>
     </>
   );
 }

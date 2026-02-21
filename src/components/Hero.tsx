@@ -18,7 +18,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-[130px]">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

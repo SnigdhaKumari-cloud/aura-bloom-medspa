@@ -10,6 +10,10 @@
   --color-gold: #C5A059;
   --color-cream: #FDFBF7;
   --color-accent: #E5D5C0;
+
+  --color-glass-cream: #fbfcf7;
+  --color-glass-peach: #f49e94;
+  --color-glass-teal: #27899d;
 }
 
 @layer base {
@@ -17,7 +21,12 @@
     @apply bg-cream text-charcoal font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
   }
 }

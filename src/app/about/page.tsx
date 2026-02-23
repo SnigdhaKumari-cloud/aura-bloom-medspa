@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { Award, Heart, Shield, Sparkles, ArrowRight } from 'lucide-react';
+import { Award, Heart, Shield, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -77,7 +77,7 @@ export default function About() {
                         >
                             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1540555700478-4be289fbec6b?q=80&w=800&h=1000&auto=format&fit=crop"
+                                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&h=1000&auto=format&fit=crop"
                                     alt="Aura Bloom luxury spa interior with curated skincare products"
                                     className="w-full h-full object-cover"
                                     referrerPolicy="no-referrer"
@@ -95,50 +95,64 @@ export default function About() {
                 </div>
             </section>
 
-            {/* ─── Our Philosophy ─── */}
+            {/* ─── Our Philosophy (from Home page) ─── */}
             <section className="py-24 bg-white px-6 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                        {/* Left: Image */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <motion.div
-                            initial={{ opacity: 0, x: -40 }}
+                            initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl"
+                            className="relative"
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1000&h=750&auto=format&fit=crop"
-                                alt="Luxury facial treatment at Aura Bloom"
-                                className="w-full h-full object-cover"
-                                referrerPolicy="no-referrer"
-                            />
+                            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                                <img
+                                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&h=1000&auto=format&fit=crop"
+                                    alt="Aura Bloom Interior"
+                                    className="w-full h-full object-cover"
+                                    referrerPolicy="no-referrer"
+                                />
+                            </div>
+                            <div className="absolute -bottom-10 -right-10 bg-navy p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs z-10">
+                                <p className="text-gold font-serif text-4xl mb-2">15+</p>
+                                <p className="text-white/60 text-xs uppercase tracking-widest leading-loose">
+                                    Years of combined expertise in medical aesthetics and skin health.
+                                </p>
+                            </div>
                         </motion.div>
 
-                        {/* Right: Text */}
                         <motion.div
-                            initial={{ opacity: 0, x: 40 }}
+                            initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                         >
-                            <span className="text-gold uppercase tracking-[0.4em] text-xs font-bold block mb-4">
-                                Our Philosophy
-                            </span>
-                            <h2 className="text-4xl md:text-5xl text-navy font-light leading-tight mb-8 font-serif">
-                                Committed to <span className="italic text-accent">Skincare</span>
+                            <span className="text-gold uppercase tracking-[0.4em] text-xs font-bold">Our Philosophy</span>
+                            <h2 className="text-4xl md:text-6xl text-navy mt-4 mb-8 font-light leading-tight">
+                                Where <span className="italic">Science</span> Meets <br />
+                                Artistic <span className="italic text-accent">Vision.</span>
                             </h2>
-                            <p className="text-charcoal/70 text-lg leading-relaxed mb-6 font-light">
-                                We are a premier medspa specializing in precision injectables, advanced laser treatments,
-                                expert facials, and bespoke lash artistry. Our boutique approach ensures every client
-                                receives personalized care designed around their unique skin biology and aesthetic goals.
+                            <p className="text-charcoal/70 text-lg mb-10 leading-relaxed font-light">
+                                At Aura Bloom, we believe beauty is a personal journey. Our boutique approach
+                                ensures that every treatment is tailored to your unique features, enhancing
+                                rather than altering. We combine the latest medical advancements with a
+                                refined aesthetic eye to deliver results that are as natural as they are
+                                transformative. Enjoy an experience dedicated to both effective results and
+                                deep relaxation.
                             </p>
-                            <p className="text-charcoal/70 text-lg leading-relaxed mb-8 font-light">
-                                Our product philosophy is simple: we only use and recommend medical-grade products
-                                that have been rigorously tested and proven effective. Every product that
-                                touches your skin at Aura Bloom meets our curation and quality standards — because
-                                your at-home routine should continue the work done in our treatment rooms.
-                            </p>
-                            <Link
-                                href="/memberships"
-                                className="text-navy font-bold uppercase tracking-widest text-xs flex items-center gap-3 group inline-flex"
-                            >
+
+                            <div className="space-y-6 mb-12">
+                                {[
+                                    'Bespoke treatment plans for every client',
+                                    'Medical-grade technology & premium products',
+                                    'Highly trained & certified aesthetic specialists',
+                                    'A sanctuary designed for your ultimate comfort'
+                                ].map((item) => (
+                                    <div key={item} className="flex items-center gap-4">
+                                        <CheckCircle2 className="text-gold shrink-0" size={20} />
+                                        <span className="text-navy font-medium text-sm tracking-wide">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <Link href="/memberships" className="text-navy font-bold uppercase tracking-widest text-xs flex items-center gap-3 group inline-flex mt-4">
                                 Join Our Membership
                                 <div className="w-10 h-px bg-navy group-hover:w-16 transition-all" />
                             </Link>

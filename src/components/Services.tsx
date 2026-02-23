@@ -35,7 +35,7 @@ const services = [
     title: 'Signature Classic Set',
     description: 'One-to-one application for a natural, elegant look that enhances your eye shape.',
     icon: Eye,
-    image: 'https://images.unsplash.com/photo-1512496015851-a1fbaf6928e4?q=80&w=600&h=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $120',
     tags: ['Natural', 'Elegant', 'Daily Wear']
   },
@@ -45,7 +45,7 @@ const services = [
     title: 'Russian Volume',
     description: 'Multi-lash technique for a dramatic, full-glam appearance with maximum density.',
     icon: Eye,
-    image: 'https://images.unsplash.com/photo-1588625692080-60b5e94b2ab7?q=80&w=600&h=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $180',
     tags: ['Dramatic', 'Fullness', 'Glamour']
   },
@@ -55,7 +55,7 @@ const services = [
     title: 'Neuromodulators',
     description: 'Expertly placed injectables to smooth wrinkles and prevent new lines from forming.',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1604602986877-c93d8b029272?q=80&w=600&h=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $12/unit',
     tags: ['Preventative', 'Smooth', 'Expert']
   },

@@ -12,7 +12,7 @@ const beforeAfterCases = [
         id: 1,
         treatment: 'Dermal Fillers',
         area: 'Lips & Jawline',
-        before: 'https://images.unsplash.com/photo-1594824476967-48c8b964df17?q=80&w=500&h=600&auto=format&fit=crop',
+        before: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=500&h=600&auto=format&fit=crop',
         after: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=500&h=600&auto=format&fit=crop',
     },
     {

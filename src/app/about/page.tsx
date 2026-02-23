@@ -40,6 +40,7 @@ export default function About() {
                             src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000&auto=format&fit=crop"
                             alt="Medical Team"
                             className="w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
                         />
                     </div>
                     <div>

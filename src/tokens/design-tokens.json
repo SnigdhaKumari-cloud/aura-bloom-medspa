@@ -1,0 +1,922 @@
+{
+    "$schema": "https://design-tokens.github.io/community-group/format/",
+    "brand": "Aura Bloom Medspa",
+    "version": "1.0.0",
+    "color": {
+        "primitive": {
+            "navy": {
+                "value": "#0A192F",
+                "type": "color",
+                "description": "Primary dark brand color — backgrounds, text, CTA fills"
+            },
+            "charcoal": {
+                "value": "#121212",
+                "type": "color",
+                "description": "Default body text — near-black for readability"
+            },
+            "gold": {
+                "value": "#C5A059",
+                "type": "color",
+                "description": "Accent highlight — CTAs, badges, decorative elements"
+            },
+            "cream": {
+                "value": "#FDFBF7",
+                "type": "color",
+                "description": "Primary background — warm off-white"
+            },
+            "accent": {
+                "value": "#E5D5C0",
+                "type": "color",
+                "description": "Secondary accent — italic headings, soft highlights"
+            },
+            "teal": {
+                "value": "#27899D",
+                "type": "color",
+                "description": "Navbar text and interactive element color"
+            },
+            "glass-cream": {
+                "value": "#FBFCF7",
+                "type": "color",
+                "description": "Glassmorphism base — light variant"
+            },
+            "glass-peach": {
+                "value": "#F49E94",
+                "type": "color",
+                "description": "Glassmorphism accent — warm variant"
+            },
+            "white": {
+                "value": "#FFFFFF",
+                "type": "color",
+                "description": "Pure white for contrast on dark backgrounds"
+            }
+        },
+        "semantic": {
+            "background": {
+                "primary": {
+                    "value": "{color.primitive.cream}",
+                    "type": "color",
+                    "description": "Main page background"
+                },
+                "secondary": {
+                    "value": "#FFFFFF",
+                    "type": "color",
+                    "description": "Section background (alternating)"
+                },
+                "dark": {
+                    "value": "{color.primitive.navy}",
+                    "type": "color",
+                    "description": "Hero, CTA blocks, footer overlay"
+                },
+                "footer": {
+                    "value": "{color.primitive.charcoal}",
+                    "type": "color",
+                    "description": "Footer background"
+                },
+                "navbar-solid": {
+                    "value": "#E5EDF1",
+                    "type": "color",
+                    "description": "Navbar scrolled/inner-page background (mint)"
+                },
+                "navbar-transparent": {
+                    "value": "transparent",
+                    "type": "color",
+                    "description": "Navbar on hero before scroll"
+                },
+                "announcement": {
+                    "value": "#F6DFD6",
+                    "type": "color",
+                    "description": "Top announcement bar (peach)"
+                },
+                "dropdown": {
+                    "value": "#E5EDF1",
+                    "type": "color",
+                    "description": "Dropdown menu background (mint)"
+                }
+            },
+            "text": {
+                "primary": {
+                    "value": "{color.primitive.charcoal}",
+                    "type": "color",
+                    "description": "Default body text"
+                },
+                "heading": {
+                    "value": "{color.primitive.navy}",
+                    "type": "color",
+                    "description": "Section headings"
+                },
+                "accent-label": {
+                    "value": "{color.primitive.gold}",
+                    "type": "color",
+                    "description": "Subheadings, labels, eyebrow text"
+                },
+                "on-dark": {
+                    "value": "#FFFFFF",
+                    "type": "color",
+                    "description": "Text on dark backgrounds"
+                },
+                "on-dark-muted": {
+                    "value": "rgba(255,255,255,0.6)",
+                    "type": "color",
+                    "description": "Secondary text on dark backgrounds"
+                },
+                "on-dark-subtle": {
+                    "value": "rgba(255,255,255,0.4)",
+                    "type": "color",
+                    "description": "Tertiary text on dark backgrounds"
+                },
+                "muted": {
+                    "value": "rgba(18,18,18,0.7)",
+                    "type": "color",
+                    "description": "Body text at 70% opacity"
+                },
+                "subtle": {
+                    "value": "rgba(18,18,18,0.5)",
+                    "type": "color",
+                    "description": "Body text at 50% opacity"
+                },
+                "navbar": {
+                    "value": "{color.primitive.teal}",
+                    "type": "color",
+                    "description": "Navbar text on solid background"
+                },
+                "navbar-transparent": {
+                    "value": "#FFFFFF",
+                    "type": "color",
+                    "description": "Navbar text over hero"
+                },
+                "italic-heading": {
+                    "value": "{color.primitive.accent}",
+                    "type": "color",
+                    "description": "Italic accent words in headings"
+                }
+            },
+            "interactive": {
+                "cta-primary-bg": {
+                    "value": "{color.primitive.gold}",
+                    "type": "color",
+                    "description": "Primary CTA background"
+                },
+                "cta-primary-text": {
+                    "value": "{color.primitive.navy}",
+                    "type": "color",
+                    "description": "Primary CTA text color"
+                },
+                "cta-primary-hover": {
+                    "value": "rgba(197,160,89,0.9)",
+                    "type": "color",
+                    "description": "Primary CTA hover state"
+                },
+                "cta-secondary-border": {
+                    "value": "rgba(255,255,255,0.2)",
+                    "type": "color",
+                    "description": "Secondary CTA border on dark bg"
+                },
+                "cta-secondary-hover": {
+                    "value": "rgba(255,255,255,0.1)",
+                    "type": "color",
+                    "description": "Secondary CTA hover bg on dark bg"
+                },
+                "filter-active-bg": {
+                    "value": "{color.primitive.navy}",
+                    "type": "color",
+                    "description": "Active filter button background"
+                },
+                "filter-active-text": {
+                    "value": "#FFFFFF",
+                    "type": "color",
+                    "description": "Active filter button text"
+                },
+                "filter-inactive-border": {
+                    "value": "rgba(10,25,47,0.1)",
+                    "type": "color",
+                    "description": "Inactive filter button border"
+                },
+                "link-hover": {
+                    "value": "{color.primitive.gold}",
+                    "type": "color",
+                    "description": "Link hover color"
+                },
+                "icon-muted": {
+                    "value": "rgba(255,255,255,0.6)",
+                    "type": "color",
+                    "description": "Social icons default state"
+                }
+            },
+            "decorative": {
+                "gradient-hero": {
+                    "value": "linear-gradient(to right, #0A192F, rgba(10,25,47,0.8), transparent)",
+                    "type": "color",
+                    "description": "Hero gradient overlay"
+                },
+                "gradient-card": {
+                    "value": "linear-gradient(to top, rgba(10,25,47,0.8), transparent, transparent)",
+                    "type": "color",
+                    "description": "Image card overlay gradient"
+                },
+                "radial-cta": {
+                    "value": "radial-gradient(circle at 50% 50%, #C5A059, transparent 70%)",
+                    "type": "color",
+                    "description": "CTA section radial glow"
+                },
+                "glass-border": {
+                    "value": "rgba(255,255,255,0.1)",
+                    "type": "color",
+                    "description": "Glassmorphism border"
+                },
+                "glass-bg": {
+                    "value": "rgba(255,255,255,0.05)",
+                    "type": "color",
+                    "description": "Glassmorphism surface"
+                },
+                "divider-light": {
+                    "value": "rgba(255,255,255,0.05)",
+                    "type": "color",
+                    "description": "Footer divider"
+                },
+                "input-border": {
+                    "value": "rgba(255,255,255,0.1)",
+                    "type": "color",
+                    "description": "Form input border on dark bg"
+                },
+                "input-bg": {
+                    "value": "rgba(255,255,255,0.05)",
+                    "type": "color",
+                    "description": "Form input background on dark bg"
+                }
+            }
+        }
+    },
+    "typography": {
+        "fontFamily": {
+            "serif": {
+                "value": "'Cormorant Garamond', serif",
+                "type": "fontFamily",
+                "description": "Display/heading typeface — elegant, editorial"
+            },
+            "sans": {
+                "value": "'Inter', sans-serif",
+                "type": "fontFamily",
+                "description": "Body/UI typeface — clean, modern"
+            }
+        },
+        "fontWeight": {
+            "light": {
+                "value": 300,
+                "type": "fontWeight"
+            },
+            "regular": {
+                "value": 400,
+                "type": "fontWeight"
+            },
+            "medium": {
+                "value": 500,
+                "type": "fontWeight"
+            },
+            "semibold": {
+                "value": 600,
+                "type": "fontWeight"
+            },
+            "bold": {
+                "value": 700,
+                "type": "fontWeight"
+            }
+        },
+        "fontSize": {
+            "3xs": {
+                "value": "10px",
+                "type": "fontSize",
+                "description": "Logo subtitle, footer legal"
+            },
+            "2xs": {
+                "value": "11px",
+                "type": "fontSize",
+                "description": "Announcement bar, utility nav"
+            },
+            "xs": {
+                "value": "12px",
+                "type": "fontSize",
+                "description": "Eyebrow labels, tags, nav links"
+            },
+            "sm": {
+                "value": "14px",
+                "type": "fontSize",
+                "description": "Body small, descriptions, footer links"
+            },
+            "base": {
+                "value": "16px",
+                "type": "fontSize",
+                "description": "Body default"
+            },
+            "lg": {
+                "value": "18px",
+                "type": "fontSize",
+                "description": "Body large, intro paragraphs"
+            },
+            "xl": {
+                "value": "20px",
+                "type": "fontSize",
+                "description": "Card headings, featured text"
+            },
+            "2xl": {
+                "value": "24px",
+                "type": "fontSize",
+                "description": "Section sub-headings"
+            },
+            "3xl": {
+                "value": "30px",
+                "type": "fontSize",
+                "description": "Secondary headings"
+            },
+            "4xl": {
+                "value": "36px",
+                "type": "fontSize",
+                "description": "Section headings (mobile)"
+            },
+            "5xl": {
+                "value": "48px",
+                "type": "fontSize",
+                "description": "Section headings (desktop)"
+            },
+            "6xl": {
+                "value": "60px",
+                "type": "fontSize",
+                "description": "Hero/section headings (desktop large)"
+            },
+            "7xl": {
+                "value": "72px",
+                "type": "fontSize",
+                "description": "Large display headings"
+            },
+            "8xl": {
+                "value": "96px",
+                "type": "fontSize",
+                "description": "Hero heading (desktop)"
+            },
+            "display": {
+                "value": "320px",
+                "type": "fontSize",
+                "description": "Decorative background text"
+            }
+        },
+        "lineHeight": {
+            "none": {
+                "value": 1,
+                "type": "lineHeight"
+            },
+            "tight": {
+                "value": 0.9,
+                "type": "lineHeight",
+                "description": "Hero headings"
+            },
+            "snug": {
+                "value": 1.1,
+                "type": "lineHeight",
+                "description": "Section headings"
+            },
+            "normal": {
+                "value": 1.5,
+                "type": "lineHeight"
+            },
+            "relaxed": {
+                "value": 1.625,
+                "type": "lineHeight",
+                "description": "Body text paragraphs"
+            },
+            "loose": {
+                "value": 1.8,
+                "type": "lineHeight",
+                "description": "Spaced-out body copy"
+            }
+        },
+        "letterSpacing": {
+            "tight": {
+                "value": "0em",
+                "type": "letterSpacing"
+            },
+            "normal": {
+                "value": "0em",
+                "type": "letterSpacing"
+            },
+            "wide": {
+                "value": "0.05em",
+                "type": "letterSpacing",
+                "description": "General wide spacing"
+            },
+            "wider": {
+                "value": "0.1em",
+                "type": "letterSpacing",
+                "description": "Footer section headings"
+            },
+            "widest": {
+                "value": "0.175em",
+                "type": "letterSpacing",
+                "description": "Navbar links, buttons"
+            },
+            "ultra": {
+                "value": "0.25em",
+                "type": "letterSpacing",
+                "description": "Logo display"
+            },
+            "mega": {
+                "value": "0.4em",
+                "type": "letterSpacing",
+                "description": "Eyebrow labels, section labels"
+            },
+            "super": {
+                "value": "0.5em",
+                "type": "letterSpacing",
+                "description": "Logo subtitle"
+            }
+        },
+        "composite": {
+            "hero-heading": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.8xl}",
+                "fontWeight": "{typography.fontWeight.light}",
+                "lineHeight": "{typography.lineHeight.tight}",
+                "letterSpacing": "{typography.letterSpacing.normal}",
+                "description": "Hero h1 — 6xl mobile, 8xl desktop"
+            },
+            "section-heading": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.7xl}",
+                "fontWeight": "{typography.fontWeight.light}",
+                "lineHeight": "{typography.lineHeight.snug}",
+                "letterSpacing": "{typography.letterSpacing.normal}",
+                "description": "Section h2 — 5xl mobile, 7xl desktop"
+            },
+            "eyebrow": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.xs}",
+                "fontWeight": "{typography.fontWeight.bold}",
+                "lineHeight": "{typography.lineHeight.normal}",
+                "letterSpacing": "{typography.letterSpacing.mega}",
+                "textTransform": "uppercase",
+                "color": "{color.primitive.gold}",
+                "description": "Small labels above headings — 'Our Philosophy', 'Our Expertise'"
+            },
+            "nav-link": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "13px",
+                "fontWeight": "{typography.fontWeight.medium}",
+                "letterSpacing": "2.8px",
+                "textTransform": "uppercase",
+                "description": "Desktop navigation links"
+            },
+            "utility-link": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.2xs}",
+                "fontWeight": "{typography.fontWeight.medium}",
+                "letterSpacing": "2.8px",
+                "textTransform": "uppercase",
+                "description": "Account, Search, Cart utility links"
+            },
+            "body": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.lg}",
+                "fontWeight": "{typography.fontWeight.light}",
+                "lineHeight": "{typography.lineHeight.relaxed}",
+                "description": "Default body paragraph style"
+            },
+            "body-small": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.sm}",
+                "fontWeight": "{typography.fontWeight.regular}",
+                "lineHeight": "{typography.lineHeight.relaxed}",
+                "description": "Descriptions, footer text"
+            },
+            "card-title": {
+                "fontFamily": "{typography.fontFamily.serif}",
+                "fontSize": "{typography.fontSize.2xl}",
+                "fontWeight": "{typography.fontWeight.regular}",
+                "description": "Service card headings"
+            },
+            "cta-button": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.sm}",
+                "fontWeight": "{typography.fontWeight.bold}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "description": "Primary CTA button text"
+            },
+            "tag": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.3xs}",
+                "fontWeight": "{typography.fontWeight.regular}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "description": "Service tags and badges"
+            },
+            "footer-heading": {
+                "fontFamily": "{typography.fontFamily.sans}",
+                "fontSize": "{typography.fontSize.xs}",
+                "fontWeight": "{typography.fontWeight.bold}",
+                "letterSpacing": "{typography.letterSpacing.wider}",
+                "textTransform": "uppercase",
+                "color": "{color.primitive.gold}",
+                "description": "Footer section headings"
+            }
+        }
+    },
+    "spacing": {
+        "0": {
+            "value": "0px",
+            "type": "spacing"
+        },
+        "0.5": {
+            "value": "2px",
+            "type": "spacing"
+        },
+        "1": {
+            "value": "4px",
+            "type": "spacing"
+        },
+        "1.5": {
+            "value": "6px",
+            "type": "spacing"
+        },
+        "2": {
+            "value": "8px",
+            "type": "spacing"
+        },
+        "2.5": {
+            "value": "10px",
+            "type": "spacing"
+        },
+        "3": {
+            "value": "12px",
+            "type": "spacing"
+        },
+        "4": {
+            "value": "16px",
+            "type": "spacing"
+        },
+        "5": {
+            "value": "20px",
+            "type": "spacing"
+        },
+        "6": {
+            "value": "24px",
+            "type": "spacing"
+        },
+        "8": {
+            "value": "32px",
+            "type": "spacing"
+        },
+        "10": {
+            "value": "40px",
+            "type": "spacing"
+        },
+        "12": {
+            "value": "48px",
+            "type": "spacing"
+        },
+        "16": {
+            "value": "64px",
+            "type": "spacing"
+        },
+        "20": {
+            "value": "80px",
+            "type": "spacing"
+        },
+        "24": {
+            "value": "96px",
+            "type": "spacing"
+        },
+        "32": {
+            "value": "128px",
+            "type": "spacing"
+        },
+        "section-padding": {
+            "sm": {
+                "value": "96px",
+                "type": "spacing",
+                "description": "py-24 — standard section"
+            },
+            "lg": {
+                "value": "128px",
+                "type": "spacing",
+                "description": "py-32 — larger section"
+            }
+        },
+        "container": {
+            "max-width": {
+                "value": "1280px",
+                "type": "spacing",
+                "description": "max-w-7xl — content container"
+            },
+            "max-width-narrow": {
+                "value": "1024px",
+                "type": "spacing",
+                "description": "max-w-5xl — CTA / narrow sections"
+            },
+            "max-width-header": {
+                "value": "1400px",
+                "type": "spacing",
+                "description": "Header max-width"
+            },
+            "padding-x": {
+                "value": "24px",
+                "type": "spacing",
+                "description": "px-6 — horizontal padding"
+            },
+            "padding-x-header": {
+                "value": "32px",
+                "type": "spacing",
+                "description": "px-8 — header horizontal padding"
+            }
+        },
+        "navbar-offset": {
+            "value": "130px",
+            "type": "spacing",
+            "description": "pt-[130px] — content offset for fixed navbar"
+        }
+    },
+    "borderRadius": {
+        "sm": {
+            "value": "2px",
+            "type": "borderRadius",
+            "description": "Dropdown menus"
+        },
+        "md": {
+            "value": "8px",
+            "type": "borderRadius"
+        },
+        "lg": {
+            "value": "12px",
+            "type": "borderRadius",
+            "description": "Mobile nav links"
+        },
+        "xl": {
+            "value": "16px",
+            "type": "borderRadius",
+            "description": "Glassmorphism cards"
+        },
+        "2xl": {
+            "value": "24px",
+            "type": "borderRadius",
+            "description": "Image cards, overlays"
+        },
+        "3xl": {
+            "value": "48px",
+            "type": "borderRadius",
+            "description": "CTA section container"
+        },
+        "full": {
+            "value": "9999px",
+            "type": "borderRadius",
+            "description": "Buttons, tags, inputs"
+        }
+    },
+    "shadow": {
+        "lg": {
+            "value": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+            "type": "boxShadow",
+            "description": "Dropdown menus, mobile nav"
+        },
+        "xl": {
+            "value": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)",
+            "type": "boxShadow",
+            "description": "CTA buttons, accent boxes"
+        },
+        "2xl": {
+            "value": "0 25px 50px -12px rgba(0,0,0,0.25)",
+            "type": "boxShadow",
+            "description": "Image cards, hero elements, CTA blocks"
+        }
+    },
+    "animation": {
+        "duration": {
+            "fast": {
+                "value": "150ms",
+                "type": "duration",
+                "description": "Dropdown open/close"
+            },
+            "normal": {
+                "value": "300ms",
+                "type": "duration",
+                "description": "Hover transitions, color changes"
+            },
+            "medium": {
+                "value": "500ms",
+                "type": "duration",
+                "description": "Section entry animations, content fade"
+            },
+            "slow": {
+                "value": "700ms",
+                "type": "duration",
+                "description": "Image hover scale"
+            },
+            "hero": {
+                "value": "800ms",
+                "type": "duration",
+                "description": "Hero content entrance"
+            },
+            "image": {
+                "value": "1000ms",
+                "type": "duration",
+                "description": "Card image hover zoom"
+            }
+        },
+        "easing": {
+            "ease-out": {
+                "value": "cubic-bezier(0, 0, 0.2, 1)",
+                "type": "cubicBezier",
+                "description": "Dropdown/menu transitions"
+            },
+            "ease-in-out": {
+                "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+                "type": "cubicBezier",
+                "description": "Floating element animations"
+            }
+        },
+        "presets": {
+            "fade-up": {
+                "initial": {
+                    "opacity": 0,
+                    "y": 20
+                },
+                "animate": {
+                    "opacity": 1,
+                    "y": 0
+                },
+                "description": "Standard section entrance — content fades in and slides up"
+            },
+            "fade-left": {
+                "initial": {
+                    "opacity": 0,
+                    "x": -50
+                },
+                "animate": {
+                    "opacity": 1,
+                    "x": 0
+                },
+                "description": "Left-side content entrance"
+            },
+            "fade-right": {
+                "initial": {
+                    "opacity": 0,
+                    "x": 50
+                },
+                "animate": {
+                    "opacity": 1,
+                    "x": 0
+                },
+                "description": "Right-side content entrance"
+            },
+            "scale-in": {
+                "initial": {
+                    "opacity": 0,
+                    "scale": 0.9
+                },
+                "animate": {
+                    "opacity": 1,
+                    "scale": 1
+                },
+                "description": "Card entry animation (grid filtering)"
+            },
+            "float": {
+                "animate": {
+                    "y": [
+                        0,
+                        -10,
+                        0
+                    ]
+                },
+                "duration": 4,
+                "repeat": "Infinity",
+                "ease": "easeInOut",
+                "description": "Floating card subtle hover animation"
+            },
+            "image-hover-zoom": {
+                "transform": "scale(1.1)",
+                "duration": "1s",
+                "description": "Image zoom on card hover"
+            }
+        }
+    },
+    "effects": {
+        "glassmorphism": {
+            "nav": {
+                "background": "rgba(10,25,47,0.9)",
+                "backdropFilter": "blur(12px)",
+                "borderBottom": "1px solid rgba(255,255,255,0.1)",
+                "description": "Original glass-nav class (dark variant)"
+            },
+            "card": {
+                "background": "rgba(255,255,255,0.05)",
+                "backdropFilter": "blur(16px)",
+                "border": "1px solid rgba(255,255,255,0.1)",
+                "description": "Floating card glassmorphism (hero, service icons)"
+            },
+            "badge": {
+                "background": "rgba(255,255,255,0.2)",
+                "backdropFilter": "blur(12px)",
+                "border": "1px solid rgba(255,255,255,0.2)",
+                "description": "Before/After labels on images"
+            }
+        },
+        "overlay": {
+            "image-gradient": {
+                "background": "linear-gradient(to top, rgba(10,25,47,0.8), transparent, transparent)",
+                "opacity": "0.6 → 0.8 on hover",
+                "description": "Dark gradient overlay on service cards"
+            },
+            "hero-gradient": {
+                "background": "linear-gradient(to right, #0A192F, rgba(10,25,47,0.8), transparent)",
+                "description": "Hero background gradient from left"
+            }
+        }
+    },
+    "breakpoints": {
+        "sm": {
+            "value": "640px",
+            "type": "dimension"
+        },
+        "md": {
+            "value": "768px",
+            "type": "dimension",
+            "description": "Tablet — grid changes, mobile nav hides"
+        },
+        "lg": {
+            "value": "1024px",
+            "type": "dimension",
+            "description": "Desktop — 3-col grids, side-by-side layouts"
+        }
+    },
+    "component-tokens": {
+        "button": {
+            "primary": {
+                "background": "{color.primitive.gold}",
+                "color": "{color.primitive.navy}",
+                "padding": "16px 40px",
+                "borderRadius": "{borderRadius.full}",
+                "fontSize": "{typography.fontSize.sm}",
+                "fontWeight": "{typography.fontWeight.bold}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "shadow": "{shadow.xl}",
+                "hover-background": "rgba(197,160,89,0.9)"
+            },
+            "secondary-dark": {
+                "background": "transparent",
+                "color": "#FFFFFF",
+                "border": "1px solid rgba(255,255,255,0.2)",
+                "padding": "16px 40px",
+                "borderRadius": "{borderRadius.full}",
+                "fontSize": "{typography.fontSize.sm}",
+                "fontWeight": "{typography.fontWeight.medium}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "hover-background": "rgba(255,255,255,0.1)"
+            },
+            "filter": {
+                "padding": "12px 32px",
+                "borderRadius": "{borderRadius.full}",
+                "fontSize": "{typography.fontSize.xs}",
+                "fontWeight": "{typography.fontWeight.semibold}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "active-bg": "{color.primitive.navy}",
+                "active-color": "#FFFFFF",
+                "inactive-border": "rgba(10,25,47,0.1)"
+            },
+            "text-link": {
+                "fontSize": "{typography.fontSize.xs}",
+                "fontWeight": "{typography.fontWeight.bold}",
+                "letterSpacing": "{typography.letterSpacing.widest}",
+                "textTransform": "uppercase",
+                "color": "{color.primitive.navy}",
+                "hover-color": "{color.primitive.gold}"
+            }
+        },
+        "card": {
+            "service": {
+                "borderRadius": "{borderRadius.2xl}",
+                "shadow": "{shadow.2xl}",
+                "image-aspect-ratio": "4/5",
+                "hover-image-scale": "1.1",
+                "hover-image-duration": "1000ms"
+            }
+        },
+        "input": {
+            "newsletter": {
+                "background": "rgba(255,255,255,0.05)",
+                "border": "1px solid rgba(255,255,255,0.1)",
+                "borderRadius": "{borderRadius.full}",
+                "padding": "12px 24px",
+                "fontSize": "{typography.fontSize.sm}",
+                "focus-border-color": "{color.primitive.gold}"
+            }
+        },
+        "tag": {
+            "borderRadius": "{borderRadius.full}",
+            "padding": "4px 12px",
+            "fontSize": "{typography.fontSize.3xs}",
+            "letterSpacing": "{typography.letterSpacing.widest}",
+            "textTransform": "uppercase",
+            "border": "1px solid rgba(10,25,47,0.1)",
+            "color": "rgba(10,25,47,0.4)"
+        }
+    }
+}

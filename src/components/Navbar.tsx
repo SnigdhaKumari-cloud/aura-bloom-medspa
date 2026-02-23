@@ -54,10 +54,11 @@ export default function Navbar() {
     return pathname === href || pathname.startsWith(href + '/');
   };
 
-  // Glasskin-style: teal text on solid bg, white text over hero
-  const teal = '#27899D';
+  // Brand colors for navbar states
+  const navyBg = '#0A192F';
   const peachBg = '#F6DFD6';
-  const mintBg = '#E5EDF1';
+  const scrolledText = '#FFFFFF';
+  const gold = '#C5A059';
 
   const isHomePage = pathname === '/';
   // Only transparent on home page before scroll
@@ -75,7 +76,7 @@ export default function Navbar() {
       >
         <p
           className="text-[11px] uppercase font-semibold"
-          style={{ color: teal, letterSpacing: '2.8px' }}
+          style={{ color: navyBg, letterSpacing: '2.8px' }}
         >
           Book Your Transformation Today
         </p>
@@ -88,7 +89,7 @@ export default function Navbar() {
           isTransparent ? 'top-[38px]' : 'top-0'
         )}
         style={{
-          backgroundColor: isTransparent ? 'transparent' : mintBg,
+          backgroundColor: isTransparent ? 'transparent' : navyBg,
         }}
       >
         {/* Top Tier: Logo (center) + Utility Icons (right) */}
@@ -103,13 +104,13 @@ export default function Navbar() {
           >
             <span
               className="text-4xl font-serif tracking-[0.25em] transition-colors duration-300"
-              style={{ color: isTransparent ? 'white' : teal }}
+              style={{ color: isTransparent ? 'white' : gold }}
             >
               AURA
             </span>
             <span
               className="text-[10px] tracking-[0.5em] font-bold mt-0.5 uppercase transition-colors duration-300"
-              style={{ color: isTransparent ? 'rgba(255,255,255,0.8)' : teal }}
+              style={{ color: isTransparent ? 'rgba(255,255,255,0.8)' : gold }}
             >
               Bloom Medspa
             </span>
@@ -119,14 +120,14 @@ export default function Navbar() {
           <div className="flex-1 flex items-center justify-end gap-7">
             <button
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : scrolledText, letterSpacing: '2.8px' }}
             >
               <User size={15} strokeWidth={1.5} />
               Account
             </button>
             <button
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : scrolledText, letterSpacing: '2.8px' }}
             >
               <Search size={15} strokeWidth={1.5} />
               Search
@@ -134,7 +135,7 @@ export default function Navbar() {
             <Link
               href="/cart"
               className="hidden md:flex items-center gap-1.5 text-[11px] uppercase font-medium transition-colors duration-300"
-              style={{ color: isTransparent ? 'white' : teal, letterSpacing: '2.8px' }}
+              style={{ color: isTransparent ? 'white' : scrolledText, letterSpacing: '2.8px' }}
             >
               <ShoppingBag size={15} strokeWidth={1.5} />
               Cart (0)
@@ -143,7 +144,7 @@ export default function Navbar() {
             {/* Mobile Toggle */}
             <button
               className="md:hidden transition-colors"
-              style={{ color: isTransparent ? 'white' : teal }}
+              style={{ color: isTransparent ? 'white' : scrolledText }}
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -166,7 +167,7 @@ export default function Navbar() {
                         onMouseEnter={() => setServicesOpen(true)}
                         className="text-[13px] uppercase font-medium py-1 relative transition-colors duration-300"
                         style={{
-                          color: isTransparent ? 'white' : teal,
+                          color: isTransparent ? 'white' : scrolledText,
                           letterSpacing: '2.8px',
                         }}
                       >
@@ -177,7 +178,7 @@ export default function Navbar() {
                             "absolute -bottom-1 left-0 right-0 h-[1.5px] transition-opacity duration-300",
                             active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                           )}
-                          style={{ backgroundColor: isTransparent ? 'white' : teal }}
+                          style={{ backgroundColor: isTransparent ? 'white' : gold }}
                         />
                       </button>
 
@@ -191,7 +192,7 @@ export default function Navbar() {
                             transition={{ duration: 0.15, ease: 'easeOut' }}
                             onMouseLeave={() => setServicesOpen(false)}
                             className="absolute top-full left-0 mt-2 min-w-[200px] py-3 z-50 rounded-sm shadow-lg"
-                            style={{ backgroundColor: mintBg }}
+                            style={{ backgroundColor: navyBg }}
                           >
                             {serviceSubLinks.map((subLink) => (
                               <Link
@@ -199,7 +200,7 @@ export default function Navbar() {
                                 href={subLink.href}
                                 onClick={() => setServicesOpen(false)}
                                 className="block px-5 py-2.5 text-[12px] uppercase font-normal transition-colors duration-200 hover:opacity-70"
-                                style={{ color: teal, letterSpacing: '2px' }}
+                                style={{ color: scrolledText, letterSpacing: '2px' }}
                               >
                                 {subLink.name}
                               </Link>
@@ -217,7 +218,7 @@ export default function Navbar() {
                     href={link.href}
                     className="text-[13px] uppercase font-medium py-1 relative group transition-colors duration-300"
                     style={{
-                      color: isTransparent ? 'white' : teal,
+                      color: isTransparent ? 'white' : scrolledText,
                       letterSpacing: '2.8px',
                     }}
                   >
@@ -228,7 +229,7 @@ export default function Navbar() {
                         "absolute -bottom-1 left-0 right-0 h-[1.5px] transition-opacity duration-300",
                         active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                       )}
-                      style={{ backgroundColor: isTransparent ? 'white' : teal }}
+                      style={{ backgroundColor: isTransparent ? 'white' : gold }}
                     />
                   </Link>
                 );
@@ -245,7 +246,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               className="absolute top-full left-0 right-0 overflow-hidden md:hidden shadow-lg"
-              style={{ backgroundColor: mintBg }}
+              style={{ backgroundColor: navyBg }}
             >
               <div className="flex flex-col p-8 gap-1">
                 {navLinks.map((link) => (
@@ -255,7 +256,7 @@ export default function Navbar() {
                         <button
                           onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                           className="w-full text-left text-[13px] uppercase font-semibold flex items-center justify-between py-3 px-4 rounded-lg transition-all"
-                          style={{ color: teal, letterSpacing: '2.8px' }}
+                          style={{ color: scrolledText, letterSpacing: '2.8px' }}
                         >
                           {link.name}
                           <span
@@ -283,7 +284,7 @@ export default function Navbar() {
                                     href={subLink.href}
                                     onClick={() => { setIsOpen(false); setMobileServicesOpen(false); }}
                                     className="text-[12px] uppercase py-2 px-4 rounded-lg transition-all hover:opacity-70"
-                                    style={{ color: teal, letterSpacing: '2px' }}
+                                    style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '2px' }}
                                   >
                                     {subLink.name}
                                   </Link>
@@ -301,23 +302,23 @@ export default function Navbar() {
                           "text-[13px] uppercase font-semibold py-3 px-4 rounded-lg block transition-all",
                           isActive(link.href) ? "underline underline-offset-4" : "hover:opacity-70"
                         )}
-                        style={{ color: teal, letterSpacing: '2.8px' }}
+                        style={{ color: scrolledText, letterSpacing: '2.8px' }}
                       >
                         {link.name}
                       </Link>
                     )}
                   </div>
                 ))}
-                <div className="flex flex-col gap-4 pt-6 border-t mt-4" style={{ borderColor: `${teal}20` }}>
+                <div className="flex flex-col gap-4 pt-6 border-t mt-4" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
                   <button
                     className="flex items-center gap-2 text-[11px] uppercase font-bold"
-                    style={{ color: teal, letterSpacing: '2.8px' }}
+                    style={{ color: scrolledText, letterSpacing: '2.8px' }}
                   >
                     <Search size={18} /> Search
                   </button>
                   <button
                     className="flex items-center gap-2 text-[11px] uppercase font-bold"
-                    style={{ color: teal, letterSpacing: '2.8px' }}
+                    style={{ color: scrolledText, letterSpacing: '2.8px' }}
                   >
                     <User size={18} /> Account
                   </button>

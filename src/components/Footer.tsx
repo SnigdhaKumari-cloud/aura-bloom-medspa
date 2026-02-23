@@ -26,8 +26,8 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-white/60">
               <li><Link href="/services" className="hover:text-white transition-colors">Treatments</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Our Team</Link></li>
+              <li><Link href="/memberships" className="hover:text-white transition-colors">Memberships</Link></li>
               <li><Link href="/gift-cards" className="hover:text-white transition-colors">Gift Cards</Link></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
 
@@ -40,11 +40,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-gold shrink-0" />
-                <span>(555) 123-4567</span>
+                <a href="tel:+15551234567" className="hover:text-white transition-colors">(555) 123-4567</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-gold shrink-0" />
-                <span>concierge@luminaluxe.com</span>
+                <a href="mailto:concierge@aurabloom.com" className="hover:text-white transition-colors">concierge@aurabloom.com</a>
               </li>
             </ul>
           </div>

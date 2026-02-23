@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Zap, Eye, Heart, ArrowRight, Plus } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link';
 import { cn } from '../lib/utils';
 
 const categories = ['All', 'Laser', 'Lashes', 'MedSpa'];
@@ -176,10 +177,10 @@ export default function Services() {
                       </span>
                     ))}
                   </div>
-                  <a href="#contact" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
-                    Contact to Book
+                  <Link href="/services" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
+                    Book Now
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -191,9 +192,9 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           className="mt-24 text-center"
         >
-          <button className="border-b border-navy/20 pb-2 text-navy uppercase tracking-[0.3em] text-xs font-bold hover:text-gold hover:border-gold transition-all">
+          <Link href="/services" className="border-b border-navy/20 pb-2 text-navy uppercase tracking-[0.3em] text-xs font-bold hover:text-gold hover:border-gold transition-all">
             View Full Treatment Menu
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

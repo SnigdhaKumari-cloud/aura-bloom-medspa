@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Gift, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function GiftCards() {
     return (
@@ -35,10 +36,10 @@ export default function GiftCards() {
                                 ))}
                             </div>
 
-                            <button className="bg-navy hover:bg-navy/90 text-white px-10 py-4 rounded-full text-sm uppercase tracking-widest font-bold transition-all shadow-xl flex items-center gap-3 group w-full sm:w-auto justify-center">
+                            <Link href="/services" className="bg-navy hover:bg-navy/90 text-white px-10 py-4 rounded-full text-sm uppercase tracking-widest font-bold transition-all shadow-xl flex items-center gap-3 group w-full sm:w-auto justify-center">
                                 Purchase Gift Card
                                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </Link>
                         </motion.div>
                     </div>
 
@@ -47,6 +48,7 @@ export default function GiftCards() {
                             src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop"
                             alt="Luxury Spa Gift Setup"
                             className="absolute inset-0 w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                         <div className="absolute bottom-10 left-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 text-white max-w-sm">

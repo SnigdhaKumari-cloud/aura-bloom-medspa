@@ -52,6 +52,7 @@ export default function Home() {
                                     src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&h=1000&auto=format&fit=crop"
                                     alt="Aura Bloom Interior"
                                     className="w-full h-full object-cover"
+                                    referrerPolicy="no-referrer"
                                 />
                             </div>
                             <div className="absolute -bottom-10 -right-10 bg-navy p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs z-10">
@@ -143,8 +144,8 @@ export default function Home() {
                                 key={item.id}
                                 onClick={() => setActiveCase(idx)}
                                 className={`px-8 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all border ${activeCase === idx
-                                        ? 'bg-navy text-white border-navy shadow-lg'
-                                        : 'bg-transparent text-navy/60 border-navy/10 hover:border-navy/30'
+                                    ? 'bg-navy text-white border-navy shadow-lg'
+                                    : 'bg-transparent text-navy/60 border-navy/10 hover:border-navy/30'
                                     }`}
                             >
                                 {item.treatment}

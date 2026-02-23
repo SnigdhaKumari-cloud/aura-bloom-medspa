@@ -1,0 +1,193 @@
+/**
+ * ════════════════════════════════════════════════════════════════════════
+ *  AURA BLOOM MEDSPA — CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+ *  Version: 1.0.0
+ *  
+ *  Import this file in any project to access all brand design tokens
+ *  as native CSS custom properties. Works with any framework.
+ *  
+ *  Usage:  @import './tokens.css';
+ *          color: var(--color-gold);
+ *          font-family: var(--font-serif);
+ * ════════════════════════════════════════════════════════════════════════
+ */
+
+:root {
+  /* ──────────────────────────────────────────────────────────────────
+     COLORS — Primitive Palette
+     ────────────────────────────────────────────────────────────────── */
+  --color-navy:         #0A192F;
+  --color-charcoal:     #121212;
+  --color-gold:         #C5A059;
+  --color-cream:        #FDFBF7;
+  --color-accent:       #E5D5C0;
+  --color-teal:         #27899D;
+  --color-white:        #FFFFFF;
+  --color-glass-cream:  #FBFCF7;
+  --color-glass-peach:  #F49E94;
+
+  /* Background — Semantic */
+  --bg-primary:         var(--color-cream);
+  --bg-secondary:       #FFFFFF;
+  --bg-dark:            var(--color-navy);
+  --bg-footer:          var(--color-charcoal);
+  --bg-navbar-solid:    #E5EDF1;
+  --bg-announcement:    #F6DFD6;
+
+  /* Text — Semantic */
+  --text-primary:       var(--color-charcoal);
+  --text-heading:       var(--color-navy);
+  --text-accent-label:  var(--color-gold);
+  --text-on-dark:       #FFFFFF;
+  --text-on-dark-60:    rgba(255, 255, 255, 0.6);
+  --text-on-dark-40:    rgba(255, 255, 255, 0.4);
+  --text-on-dark-30:    rgba(255, 255, 255, 0.3);
+  --text-muted:         rgba(18, 18, 18, 0.7);
+  --text-subtle:        rgba(18, 18, 18, 0.5);
+  --text-navbar:        var(--color-teal);
+  --text-italic-accent: var(--color-accent);
+
+  /* Interactive — Semantic */
+  --cta-primary-bg:     var(--color-gold);
+  --cta-primary-text:   var(--color-navy);
+  --cta-primary-hover:  rgba(197, 160, 89, 0.9);
+  --cta-secondary-border: rgba(255, 255, 255, 0.2);
+  --cta-secondary-hover:  rgba(255, 255, 255, 0.1);
+  --link-hover:         var(--color-gold);
+
+  /* Decorative */
+  --glass-border:       rgba(255, 255, 255, 0.1);
+  --glass-bg:           rgba(255, 255, 255, 0.05);
+  --glass-bg-20:        rgba(255, 255, 255, 0.2);
+  --divider-light:      rgba(255, 255, 255, 0.05);
+  --input-border:       rgba(255, 255, 255, 0.1);
+  --input-bg:           rgba(255, 255, 255, 0.05);
+  --filter-inactive-border: rgba(10, 25, 47, 0.1);
+  --tag-color:          rgba(10, 25, 47, 0.4);
+
+  /* Gradients */
+  --gradient-hero:      linear-gradient(to right, #0A192F, rgba(10,25,47,0.8), transparent);
+  --gradient-card:      linear-gradient(to top, rgba(10,25,47,0.8), transparent, transparent);
+  --radial-cta:         radial-gradient(circle at 50% 50%, #C5A059, transparent 70%);
+
+  /* ──────────────────────────────────────────────────────────────────
+     TYPOGRAPHY
+     ────────────────────────────────────────────────────────────────── */
+  --font-serif:         'Cormorant Garamond', serif;
+  --font-sans:          'Inter', sans-serif;
+
+  /* Font Weights */
+  --fw-light:           300;
+  --fw-regular:         400;
+  --fw-medium:          500;
+  --fw-semibold:        600;
+  --fw-bold:            700;
+
+  /* Font Sizes */
+  --fs-3xs:             10px;
+  --fs-2xs:             11px;
+  --fs-xs:              12px;
+  --fs-sm:              14px;
+  --fs-base:            16px;
+  --fs-lg:              18px;
+  --fs-xl:              20px;
+  --fs-2xl:             24px;
+  --fs-3xl:             30px;
+  --fs-4xl:             36px;
+  --fs-5xl:             48px;
+  --fs-6xl:             60px;
+  --fs-7xl:             72px;
+  --fs-8xl:             96px;
+
+  /* Line Heights */
+  --lh-none:            1;
+  --lh-tight:           0.9;
+  --lh-snug:            1.1;
+  --lh-normal:          1.5;
+  --lh-relaxed:         1.625;
+  --lh-loose:           1.8;
+
+  /* Letter Spacing */
+  --ls-normal:          0em;
+  --ls-wide:            0.05em;
+  --ls-wider:           0.1em;
+  --ls-widest:          0.175em;
+  --ls-nav:             2.8px;
+  --ls-ultra:           0.25em;
+  --ls-mega:            0.4em;
+  --ls-super:           0.5em;
+
+  /* ──────────────────────────────────────────────────────────────────
+     SPACING
+     ────────────────────────────────────────────────────────────────── */
+  --space-0:            0px;
+  --space-1:            4px;
+  --space-1-5:          6px;
+  --space-2:            8px;
+  --space-2-5:          10px;
+  --space-3:            12px;
+  --space-4:            16px;
+  --space-5:            20px;
+  --space-6:            24px;
+  --space-8:            32px;
+  --space-10:           40px;
+  --space-12:           48px;
+  --space-16:           64px;
+  --space-20:           80px;
+  --space-24:           96px;
+  --space-32:           128px;
+
+  --section-py:         96px;   /* py-24 */
+  --section-py-lg:      128px;  /* py-32 */
+
+  /* Container */
+  --container-max:      1280px;
+  --container-narrow:   1024px;
+  --container-header:   1400px;
+  --container-px:       24px;
+  --container-px-header: 32px;
+  --navbar-offset:      130px;
+
+  /* ──────────────────────────────────────────────────────────────────
+     BORDER RADIUS
+     ────────────────────────────────────────────────────────────────── */
+  --radius-sm:          2px;
+  --radius-md:          8px;
+  --radius-lg:          12px;
+  --radius-xl:          16px;
+  --radius-2xl:         24px;
+  --radius-3xl:         48px;
+  --radius-full:        9999px;
+
+  /* ──────────────────────────────────────────────────────────────────
+     SHADOWS
+     ────────────────────────────────────────────────────────────────── */
+  --shadow-lg:          0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  --shadow-xl:          0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  --shadow-2xl:         0 25px 50px -12px rgba(0,0,0,0.25);
+
+  /* ──────────────────────────────────────────────────────────────────
+     ANIMATION / TRANSITIONS
+     ────────────────────────────────────────────────────────────────── */
+  --duration-fast:      150ms;
+  --duration-normal:    300ms;
+  --duration-medium:    500ms;
+  --duration-slow:      700ms;
+  --duration-hero:      800ms;
+  --duration-image:     1000ms;
+  --ease-out:           cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:        cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ──────────────────────────────────────────────────────────────────
+     BREAKPOINTS (for reference — use in @media queries)
+     ────────────────────────────────────────────────────────────────── */
+  /* --bp-sm:  640px;  */
+  /* --bp-md:  768px;  */
+  /* --bp-lg:  1024px; */
+
+  /* ──────────────────────────────────────────────────────────────────
+     GLASSMORPHISM EFFECTS
+     ────────────────────────────────────────────────────────────────── */
+  --glass-blur:         blur(12px);
+  --glass-blur-lg:      blur(16px);
+}

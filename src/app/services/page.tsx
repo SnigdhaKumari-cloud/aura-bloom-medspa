@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Filter, Leaf } from 'lucide-react';
 import ServicesList from '../../components/Services';
+import Link from 'next/link';
 import React from 'react';
 
 export default function ServicesPage() {
@@ -50,9 +51,9 @@ export default function ServicesPage() {
                             <span className="text-gold uppercase tracking-widest text-[10px] font-bold block mb-2">{feature.tag}</span>
                             <h3 className="font-serif text-2xl text-navy mb-4">{feature.title}</h3>
                             <p className="text-charcoal/70 text-sm leading-relaxed mb-6">{feature.desc}</p>
-                            <button className="text-xs uppercase tracking-widest font-bold text-navy flex items-center gap-2 group">
+                            <Link href="#services" className="text-xs uppercase tracking-widest font-bold text-navy flex items-center gap-2 group">
                                 View Pricing <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                            </button>
+                            </Link>
                         </div>
                     ))}
                 </div>

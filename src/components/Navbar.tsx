@@ -11,6 +11,7 @@ const serviceSubLinks = [
   { name: 'Injectables', href: '/services#injectables' },
   { name: 'Laser & Light', href: '/services#laser-light' },
   { name: 'Aesthetics', href: '/services#aesthetics' },
+  { name: 'Lashes & Brows', href: '/services/lashes' },
   { name: 'View All Services', href: '/services' },
 ];
 

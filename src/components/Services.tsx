@@ -37,7 +37,8 @@ const services = [
     icon: Eye,
     image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $120',
-    tags: ['Natural', 'Elegant', 'Daily Wear']
+    tags: ['Natural', 'Elegant', 'Daily Wear'],
+    href: '/services/lashes'
   },
   {
     id: 'lash-volume',
@@ -47,7 +48,8 @@ const services = [
     icon: Eye,
     image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $180',
-    tags: ['Dramatic', 'Fullness', 'Glamour']
+    tags: ['Dramatic', 'Fullness', 'Glamour'],
+    href: '/services/lashes'
   },
   {
     id: 'medspa-botox',
@@ -177,7 +179,7 @@ export default function Services() {
                       </span>
                     ))}
                   </div>
-                  <Link href="/services" className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
+                  <Link href={service.href ?? '/services'} className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
                     Book Now
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>

@@ -219,6 +219,58 @@ export default function About() {
                     </div>
                 </div>
             </section>
+
+            {/* ─── Meet Our Expert Team ─── */}
+            <section className="py-24 bg-white px-6 overflow-hidden">
+                <div className="max-w-6xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-5xl text-navy font-serif font-medium mb-4">
+                            Meet Our Expert Team
+                        </h2>
+                        <div className="w-12 h-0.5 bg-navy mx-auto mb-6" />
+                        <p className="text-charcoal/50 text-base font-light max-w-xl mx-auto">
+                            RNs, NPs, PAs, and licensed specialists with 10+ years average experience
+                        </p>
+                    </motion.div>
+
+                    <div className="flex flex-wrap justify-center gap-10 md:gap-14">
+                        {[
+                            { name: 'Natalie', role: 'Registered Nurse', image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=250&h=250&auto=format&fit=crop&crop=face' },
+                            { name: 'Taylor', role: 'Registered Nurse', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250&h=250&auto=format&fit=crop&crop=face' },
+                            { name: 'Christopher', role: 'Medical Liaison', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&h=250&auto=format&fit=crop&crop=face' },
+                            { name: 'Katelyn', role: 'Medical Liaison', image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=250&h=250&auto=format&fit=crop&crop=face' },
+                            { name: 'Mariah', role: 'Medical Assistant', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&h=250&auto=format&fit=crop&crop=face' },
+                        ].map((member, i) => (
+                            <motion.div
+                                key={member.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.08 }}
+                                className="text-center w-[140px] md:w-[160px]"
+                            >
+                                <div className="w-[130px] h-[130px] md:w-[150px] md:h-[150px] mx-auto mb-4 rounded-full overflow-hidden border-2 border-navy/10 shadow-lg">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover"
+                                        referrerPolicy="no-referrer"
+                                    />
+                                </div>
+                                <h4 className="text-navy font-serif text-base font-medium italic mb-1">
+                                    {member.name}
+                                </h4>
+                                <p className="text-charcoal/50 text-xs tracking-wide">
+                                    {member.role}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </main>
     );
 }

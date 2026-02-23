@@ -9,7 +9,7 @@ import { cn } from '../lib/utils';
 
 const serviceSubLinks = [
   { name: 'Injectables', href: '/services#injectables' },
-  { name: 'Laser & Light', href: '/services#laser-light' },
+  { name: 'MedSpa', href: '/services/medspa' },
   { name: 'Aesthetics', href: '/services#aesthetics' },
   { name: 'Lashes & Brows', href: '/services/lashes' },
   { name: 'View All Services', href: '/services' },

@@ -1,33 +1,35 @@
 "use client";
 
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Zap, Eye, Heart, ArrowRight, Plus } from 'lucide-react';
+import { Sparkles, Eye, Heart, ArrowRight, Plus } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { cn } from '../lib/utils';
 
-const categories = ['All', 'Laser', 'Lashes', 'MedSpa'];
+const categories = ['All', 'MedSpa', 'Lashes', 'Aesthetics'];
 
 const services = [
   {
-    id: 'laser-hair',
-    category: 'Laser',
-    title: 'Precision Hair Removal',
-    description: 'Permanent hair reduction using the latest diode laser technology for all skin types.',
-    icon: Zap,
+    id: 'medspa-botox',
+    category: 'MedSpa',
+    title: 'Neuromodulators',
+    description: 'Precision-placed Botox, Dysport, and Xeomin to smooth dynamic wrinkles while maintaining full natural expressivity.',
+    icon: Sparkles,
     image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&h=800&auto=format&fit=crop',
-    price: 'From $150',
-    tags: ['Permanent', 'Painless', 'All Skin Types']
+    price: 'From $12/unit',
+    tags: ['Preventative', 'Smooth', 'Expert'],
+    href: '/services/medspa'
   },
   {
-    id: 'laser-resurface',
-    category: 'Laser',
-    title: 'Skin Resurfacing',
-    description: 'Fractional CO2 laser treatments to erase fine lines, scars, and sun damage.',
-    icon: Zap,
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&h=800&auto=format&fit=crop',
-    price: 'From $450',
-    tags: ['Anti-Aging', 'Texture', 'Radiance']
+    id: 'medspa-filler',
+    category: 'MedSpa',
+    title: 'Dermal Fillers',
+    description: 'Restore volume and contour to lips, cheeks, and jawline for a lifted, youthful look that lasts up to 2 years.',
+    icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=600&h=800&auto=format&fit=crop',
+    price: 'From $600/syringe',
+    tags: ['Volume', 'Contour', 'Youthful'],
+    href: '/services/medspa'
   },
   {
     id: 'lash-classic',

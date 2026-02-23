@@ -8,9 +8,8 @@ import { useState, useEffect, useRef } from 'react';
 import { cn } from '../lib/utils';
 
 const serviceSubLinks = [
-  { name: 'Injectables', href: '/services#injectables' },
   { name: 'MedSpa', href: '/services/medspa' },
-  { name: 'Aesthetics', href: '/services#aesthetics' },
+  { name: 'Laser & Light', href: '/services/laser' },
   { name: 'Lashes & Brows', href: '/services/lashes' },
   { name: 'View All Services', href: '/services' },
 ];

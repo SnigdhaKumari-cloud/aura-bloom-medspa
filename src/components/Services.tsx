@@ -1,12 +1,12 @@
 "use client";
 
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Eye, Heart, ArrowRight, Plus } from 'lucide-react';
+import { Sparkles, Zap, Eye, ArrowRight, Plus } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { cn } from '../lib/utils';
 
-const categories = ['All', 'MedSpa', 'Lashes', 'Aesthetics'];
+const categories = ['All', 'MedSpa', 'Laser', 'Lashes'];
 
 const services = [
   {
@@ -32,6 +32,28 @@ const services = [
     href: '/services/medspa'
   },
   {
+    id: 'laser-hair',
+    category: 'Laser',
+    title: 'Laser Hair Removal',
+    description: 'Permanent hair reduction using the latest diode laser technology, safe for all skin types with lasting results.',
+    icon: Zap,
+    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=600&h=800&auto=format&fit=crop',
+    price: 'From $150/session',
+    tags: ['Permanent', 'Painless', 'All Skin Types'],
+    href: '/services/laser'
+  },
+  {
+    id: 'laser-resurface',
+    category: 'Laser',
+    title: 'Skin Resurfacing',
+    description: 'Fractional CO2 laser treatments to erase fine lines, acne scars, and sun damage for dramatically smoother skin.',
+    icon: Zap,
+    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=600&h=800&auto=format&fit=crop',
+    price: 'From $450/session',
+    tags: ['Anti-Aging', 'Texture', 'Radiance'],
+    href: '/services/laser'
+  },
+  {
     id: 'lash-classic',
     category: 'Lashes',
     title: 'Signature Classic Set',
@@ -48,31 +70,11 @@ const services = [
     title: 'Russian Volume',
     description: 'Multi-lash technique for a dramatic, full-glam appearance with maximum density.',
     icon: Eye,
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&h=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=600&h=800&auto=format&fit=crop',
     price: 'From $180',
     tags: ['Dramatic', 'Fullness', 'Glamour'],
     href: '/services/lashes'
   },
-  {
-    id: 'medspa-botox',
-    category: 'MedSpa',
-    title: 'Neuromodulators',
-    description: 'Expertly placed injectables to smooth wrinkles and prevent new lines from forming.',
-    icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?q=80&w=600&h=800&auto=format&fit=crop',
-    price: 'From $12/unit',
-    tags: ['Preventative', 'Smooth', 'Expert']
-  },
-  {
-    id: 'medspa-filler',
-    category: 'MedSpa',
-    title: 'Dermal Fillers',
-    description: 'Restore volume and contour to lips, cheeks, and jawline for a youthful lift.',
-    icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=600&h=800&auto=format&fit=crop',
-    price: 'From $600',
-    tags: ['Volume', 'Contour', 'Youthful']
-  }
 ];
 
 export default function Services() {
@@ -181,7 +183,7 @@ export default function Services() {
                       </span>
                     ))}
                   </div>
-                  <Link href={service.href ?? '/services'} className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
+                  <Link href={service.href} className="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-navy group/btn inline-flex">
                     Book Now
                     <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
